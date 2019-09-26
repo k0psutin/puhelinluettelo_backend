@@ -1,1 +1,1 @@
-# puhelinluettelo backend for full stack course.
+# phonebook backend for full stack course.
