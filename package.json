@@ -1,0 +1,25 @@
+{
+  "name": "puhelinluettelo_backend",
+  "version": "1.0.0",
+  "description": "Backend for phonebook application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k0psutin/puhelinluettelo_backend.git"
+  },
+  "keywords": [
+    "phonebook",
+    "backend",
+    "WIP",
+    "course"
+  ],
+  "author": "Jani Koponen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k0psutin/puhelinluettelo_backend/issues"
+  },
+  "homepage": "https://github.com/k0psutin/puhelinluettelo_backend#readme"
+}
