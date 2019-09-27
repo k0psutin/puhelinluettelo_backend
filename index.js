@@ -1,23 +1,15 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
-
-const PORT = 3001
-
-morgan.token('post', function (req, res) {
-   if(req.body.name | req.body.number) {
-    return JSON.stringify({ name: req.body.name,number: req.body.number })
-   }
-})
 
 const stringFormat = ':method :url :status :req[content-length] :response-time ms - :post'
 
 app.use(bodyParser.json())
 app.use(morgan(stringFormat))
-
-
-
+app.use(cors())
+app.use(express.static('build'))
 
 let persons = [
     {
@@ -47,8 +39,15 @@ let persons = [
     }
 ]
 
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
+})
+
+morgan.token('post', function (req, res) {
+   if(req.body.name | req.body.number) {
+    return JSON.stringify({ name: req.body.name,number: req.body.number })
+   }
 })
 
 app.get('/api/persons/:id', (request, response) => {
@@ -62,7 +61,7 @@ app.get('/api/persons/:id', (request, response) => {
     
 })
 
-const generateNumber = () => Math.floor(Math.random() * 99999) + 200
+const generateNumber = () => Math.floor(Math.random() * 99999) + 500
 
 app.post('/api/persons', (request, response) => {
     const newPerson = request.body
@@ -89,6 +88,8 @@ app.post('/api/persons', (request, response) => {
         id: generateNumber(),
     }
 
+    console.log('newPerson', person.id)
+
     persons = persons.concat(person)
 
     response.json(persons)
@@ -112,4 +113,3 @@ app.delete('/api/persons/:id', (request, response) => {
     console.log(id)
     response.status(204).end()
 })
-
