@@ -88,7 +88,7 @@ app.post('/api/persons', (request, response) => {
         id: generateNumber(),
     }
 
-    console.log('newPerson', person.id)
+    //console.log('newPerson', person.id)
 
     persons = persons.concat(person)
 
@@ -109,7 +109,7 @@ app.get('/api/info/', (request, response) => {
 app.delete('/api/persons/:id', (request, response) => {
     const id = Number(request.params.id)
     persons = persons.filter(person => person.id !== id)
-    console.log(persons)
-    console.log(id)
+    //console.log(persons)
+    //console.log(id)
     response.status(204).end()
 })
