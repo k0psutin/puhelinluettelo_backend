@@ -5,10 +5,18 @@ const morgan = require('morgan')
 
 const PORT = 3001
 
+morgan.token('post', function (req, res) {
+   if(req.body.name | req.body.number) {
+    return JSON.stringify({ name: req.body.name,number: req.body.number })
+   }
+})
+
+const stringFormat = ':method :url :status :req[content-length] :response-time ms - :post'
+
 app.use(bodyParser.json())
-app.use(morgan('tiny', {
-    url: function (req, res) { return req.post }
-}))
+app.use(morgan(stringFormat))
+
+
 
 
 let persons = [
