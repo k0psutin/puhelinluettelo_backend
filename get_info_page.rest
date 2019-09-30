@@ -1,0 +1,2 @@
+GET http://localhost:3001/api/info
+Content-Type: text/html
