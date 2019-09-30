@@ -1,7 +1,7 @@
-POST https://hidden-harbor-59159.herokuapp.com/api/persons
+POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-  "name": "Puna Hilkka",
-  "number": "32423424324"
+  "name": "Reijo Taalasmaa",
+  "number": "92384092"
 }
