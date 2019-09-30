@@ -10,7 +10,8 @@
     "build:ui": "rm -rf build && cd ../fullstack-open/osa3/puhelinluettelo && npm run build --prod && cp -r build c:/puhelinluettelo_backend/",
     "deploy": "git push heroku master && npm run logs:prod",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "eslint": "^6.5.0",
     "nodemon": "^1.19.2"
   }
 }
