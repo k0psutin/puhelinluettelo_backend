@@ -1,44 +1,22 @@
 {
   "name": "puhelinluettelo_backend",
   "version": "1.0.0",
-  "description": "Backend for phonebook application",
+  "description": "Backend for phonebook app",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "watch": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf build && cd ../fullstack-open/osa3/puhelinluettelo && npm run build --prod && cp -r build c:/puhelinluettelo_backend/",
-    "deploy": "git push heroku master && npm run logs:prod",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
-    "logs:prod": "heroku logs --tail",
-    "lint": "eslint ."
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/k0psutin/puhelinluettelo_backend.git"
-  },
-  "keywords": [
-    "phonebook",
-    "backend",
-    "WIP",
-    "course"
-  ],
-  "author": "Jani Koponen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/k0psutin/puhelinluettelo_backend/issues"
-  },
-  "homepage": "https://github.com/k0psutin/puhelinluettelo_backend#readme",
+  "author": "k0psutin (mr.gravez@gmail.com)",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^8.1.0",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
-    "mongoose": "^5.7.1",
-    "mongoose-unique-validator": "^2.0.3",
-    "morgan": "^1.9.1"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "eslint": "^6.5.0",
-    "nodemon": "^1.19.2"
+    "nodemon": "^2.0.7"
   }
 }
